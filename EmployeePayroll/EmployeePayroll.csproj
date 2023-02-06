@@ -129,9 +129,11 @@
     <Content Include="Images\Ellipse -2.png" />
     <Content Include="Images\Ellipse -3.png" />
     <Content Include="Images\Ellipse -4.png" />
-    <Content Include="StyleSheet\Home.css" />
-    <Content Include="WebForm\Home.aspx" />
+    <Content Include="StyleSheet\HomePG.css" />
+    <Content Include="WebForm\HomePG.aspx" />
+    <Content Include="WebForm\Login.aspx" />
     <Content Include="WebForm\PayrollForm.aspx" />
+    <Content Include="WebForm\UserRegistration.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -224,12 +226,19 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="WebForm\HomePG.aspx.cs">
+      <DependentUpon>HomePG.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="WebForm\HomePG.aspx.designer.cs">
+      <DependentUpon>HomePG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm\PayrollForm.aspx.cs">
       <DependentUpon>PayrollForm.aspx</DependentUpon>
@@ -237,6 +246,13 @@
     </Compile>
     <Compile Include="WebForm\PayrollForm.aspx.designer.cs">
       <DependentUpon>PayrollForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm\UserRegistration.aspx.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\UserRegistration.aspx.designer.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -2,17 +2,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField ID="id" runat="server" />
  <h2>
  EMPLOYEE PAY ROLL
- </h2>
+ </h2>  
+
    <br /> 
    <br /> 
+
    <div> 
            <asp:Label ID="labelId" runat="server">Name&emsp;&emsp;&emsp;&emsp;&emsp;</asp:Label>  
        <asp:TextBox ID="Name" runat="server"></asp:TextBox>
     </div> 
     <br /> 
-
     <div>
          <asp:Label ID="label5" runat="server">Profile Image&emsp;&emsp;&emsp;&emsp;</asp:Label> 
          <asp:RadioButtonList ID="rbListImages" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
@@ -45,12 +47,11 @@
      <div>
          <asp:Label ID="label3" runat="server">Salary&emsp;&emsp;&emsp;&emsp;&emsp;</asp:Label>
          <asp:DropDownList ID="DropDownList1" runat="server" > 
-         <asp:ListItem Value="">Please Select Salary</asp:ListItem> 
-         <asp:ListItem>10,000 </asp:ListItem>  
-         <asp:ListItem>20,000</asp:ListItem>  
-         <asp:ListItem>30,000</asp:ListItem>  
-         <asp:ListItem>40,000</asp:ListItem>  
-         <asp:ListItem>50,500</asp:ListItem>  
+         <asp:ListItem >Please Select Salary</asp:ListItem> 
+         <asp:ListItem Value="10,000"></asp:ListItem> 
+         <asp:ListItem Value="20,000"></asp:ListItem> 
+         <asp:ListItem Value="30,000"></asp:ListItem> 
+         <asp:ListItem Value="40,000"></asp:ListItem> 
          </asp:DropDownList> 
     </div>
     <br/> 
@@ -79,6 +80,12 @@
         <asp:Button ID="Button2" runat="server" Text="Submit" OnClick="Button2_Click" />
         <asp:Button ID="Button3" runat="server" Text="Reset" OnClick="Button3_Click" />
      </div>
+    <div>
+        <asp:Label ID="lblsuccessmessgae" runat="server" Text="" ForeColor="Green"></asp:Label>
+    </div>
+    <div>
+        <asp:Label ID="lblerrormessgae" runat="server" Text=""  ForeColor="Red"></asp:Label>
+    </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:payrollFormConnectionString2 %>" SelectCommand="SELECT * FROM [UserTable]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [UserTable] WHERE [id] = @original_id AND [Name] = @original_Name AND [IMG] = @original_IMG AND [Gender] = @original_Gender AND [Department] = @original_Department AND [Salary] = @original_Salary AND [StartDate] = @original_StartDate AND [Notes] = @original_Notes" InsertCommand="INSERT INTO [UserTable] ([Name], [IMG], [Gender], [Department], [Salary], [StartDate], [Notes]) VALUES (@Name, @IMG, @Gender, @Department, @Salary, @StartDate, @Notes)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [UserTable] SET [Name] = @Name, [IMG] = @IMG, [Gender] = @Gender, [Department] = @Department, [Salary] = @Salary, [StartDate] = @StartDate, [Notes] = @Notes WHERE [id] = @original_id AND [Name] = @original_Name AND [IMG] = @original_IMG AND [Gender] = @original_Gender AND [Department] = @original_Department AND [Salary] = @original_Salary AND [StartDate] = @original_StartDate AND [Notes] = @original_Notes">
         
     </asp:SqlDataSource>

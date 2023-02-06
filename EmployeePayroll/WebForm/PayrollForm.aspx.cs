@@ -45,13 +45,13 @@ namespace EmployeePayroll.WebForm
             RadioButtonList1.SelectedValue = "";
             DropDownList1.SelectedValue = "";
             Notes.Text = "";
-
         }
         static string connectionstring = ConfigurationManager.ConnectionStrings["payrollFormConnectionString2"].ConnectionString;
         SqlConnection cs = new SqlConnection(connectionstring);
         protected void Button2_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand("SP_User1", cs);
+            cs.Open();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@P_Name", Name.Text);
             cmd.Parameters.AddWithValue("@p_IMG", rbListImages.Text);
@@ -75,10 +75,19 @@ namespace EmployeePayroll.WebForm
             cmd.Parameters.AddWithValue("@p_salary", DropDownList1.SelectedValue);
             cmd.Parameters.AddWithValue("@p_StartDate", date.SelectedValue + "/" + month.SelectedValue + "/" + year.SelectedValue);
             cmd.Parameters.AddWithValue("@p_Notes", Notes.Text);
-            cs.Open();
-            clear();
-            var result = cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
             cs.Close();
+            clear();
+            if (id.Value == "")
+            {
+
+                lblsuccessmessgae.Text = "Inserted Successfully";
+                Response.Redirect("HomePG.aspx");
+            }
+            else
+            {
+                lblerrormessgae.Text = "Submit successfully";
+            }
         }
 
         protected void Button3_Click(object sender, EventArgs e)

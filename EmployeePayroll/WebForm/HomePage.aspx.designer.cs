@@ -11,7 +11,7 @@ namespace EmployeePayroll.WebForm
 {
 
 
-    public partial class WebForm3
+    public partial class HomePage
     {
     }
 }
